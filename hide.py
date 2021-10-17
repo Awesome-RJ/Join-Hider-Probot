@@ -10,8 +10,8 @@ API_HASH = os.environ.get("API_HASH")
 pgram = Client(
         "hide",
         bot_token=BOT_TOKEN,
-	      api_hash=API_HASH,
-        api_id=API_ID
+	api_hash=API_HASH,
+        api_id=API_ID,
     )
 
 @pgram.on_message(filters.command('start'))
