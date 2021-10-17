@@ -7,12 +7,14 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 API_ID = os.environ.get("API_ID")
 API_HASH = os.environ.get("API_HASH")
 
+session_name = BOT_TOKEN.split(":")[0]
 pgram = Client(
-        "hide",
-        bot_token=BOT_TOKEN,
-	api_hash=API_HASH,
-        api_id=API_ID,
-    )
+    session_name,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
+)
+
 
 @pgram.on_message(filters.command('start'))
 async def start(bot, message):
